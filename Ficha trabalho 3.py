@@ -19,9 +19,13 @@ def adicionar_personagem():       #função para adicionar personagem, pedindo n
     try:
         idade = int(input("Digite a idade do personagem: "))
     except:
-        print("digite numero inteiro")
+        print("Erro. Digite numero inteiro")
         idade = int(input("Digite a idade do personagem: "))
-    profissao = input("Digite a profissão do personagem: ")
+    try:
+        profissao = (input("Digite a profissão do personagem: "))
+    except:
+        print("Erro. Profissão inválida.")
+        profissao= int(input("Digite a idade do personagem: "))
     hobbies = input("Digite os hobbies do personagem, separados por vírgula: ").split(",")
     descricao = input("Digite uma breve descrição do personagem: ")
     
@@ -92,6 +96,7 @@ def pesquisar_personagem(lista_personagens): #função para pesquisar por nome d
         if personagem["nome"]==pesquisa:
             print("Personagem encontrada.")
             personagem_encontrada = True
+            print("                           ")
             print("---------------------------")
             print("Nome:", personagem["nome"])
             print("Idade:", personagem["idade"])
@@ -106,6 +111,7 @@ def pesquisar_personagem(lista_personagens): #função para pesquisar por nome d
     
 def visualizar_personagens(lista_personagens): #função para apresentar a personagem e suas informações
     for personagem in lista_personagens:
+        print("                           ")
         print("---------------------------")
         print("Nome:", personagem["nome"])
         print("Idade:", personagem["idade"])
@@ -115,12 +121,14 @@ def visualizar_personagens(lista_personagens): #função para apresentar a perso
 
 
 while True:                                  #ciclo de menu de opções do programa
+    print("                           ")
     print("1. Adicionar personagem")
     print("2. Modificar personagem")
     print("3. Remover personagem")
     print("4. Visualizar personagens")
     print("5. Pesquisar personagem")
     print("6. Sair")
+    print("                           ")
     opcao = int(input("Escolha uma opção: "))
     if opcao == 1:
         adicionar_personagem()
