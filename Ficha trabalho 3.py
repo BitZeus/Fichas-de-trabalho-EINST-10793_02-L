@@ -47,19 +47,19 @@ def modificar_personagem(lista_personagens): #função para modificar as informa
             print("4. Descrição")
             campo=input("Qual a informação a modificar?: ") #pergunta a informação a modificar
             if campo=="1":
-                personagem["idade"]=input("novo valor: ")
+                personagem["idade"]=input("Digite novo valor para idade: ")
                 break
             if campo=="2":
-                personagem["profissão"]=input("novo valor: ")
+                personagem["profissão"]=input("Digite novo valor para profissão: ")
                 break
             if campo=="3":
-                personagem["hobbies"]=input("novo valor: ").split(",")
+                personagem["hobbies"]=input("Digite novo valor para hobbies: ").split(",")
                 break
             if campo=="4":
-                personagem["descrição"]=input("novo valor: ")
+                personagem["descrição"]=input("Digite novo valor para descrição: ")
                 break    
             else:
-                print("invalido") 
+                print("Opção inválida. Tente novamente.") 
             
             
     if personagem_encontrada == False:
