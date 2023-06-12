@@ -81,7 +81,7 @@ def remover_personagem(lista_personagens):  #função para remover personagem
     pesquisa=input("Qual a personagem a remover? Introduza o nome: ")
     personagem_encontrada = False
     for personagem in lista_personagens:
-        if personagem["nome"]==pesquisa:    #procura nome da personagem no dicionario
+        if personagem["nome"].lower()==pesquisa.lower():    #procura nome da personagem no dicionario
             lista_personagens.remove(personagem)    #remove personagem da lista
             print("Personagem removida.")
             personagem_encontrada = True
