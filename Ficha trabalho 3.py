@@ -16,7 +16,11 @@ lista_personagens = []            #lista que vai contem os dicionarios de cada p
 
 def adicionar_personagem():       #função para adicionar personagem, pedindo nome, idade, profissão, hobbies e descrição
     nome = input("Digite o nome do personagem: ")
-    idade = int(input("Digite a idade do personagem: "))
+    try:
+        idade = int(input("Digite a idade do personagem: "))
+    except:
+        print("digite numero inteiro")
+        idade = int(input("Digite a idade do personagem: "))
     profissao = input("Digite a profissão do personagem: ")
     hobbies = input("Digite os hobbies do personagem, separados por vírgula: ").split(",")
     descricao = input("Digite uma breve descrição do personagem: ")
@@ -133,5 +137,3 @@ while True:                                  #ciclo de menu de opções do progr
     else:
         print("Opção inválida. Tente novamente.")
 
-#adicionar_personagem()
-#print(lista_personagens)
